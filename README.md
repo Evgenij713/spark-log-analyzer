@@ -26,9 +26,9 @@
 Запуск системы:
 1) Установить hadoop-3.3.6, spark-3.5.6-bin-hadoop3, apache-maven-3.9.11, winutils совместимый с hadoop-3.3.6;
 2) Настроить переменные среды Windows: JAVA_HOME, HADOOP_HOME, MAVEN_HOME, SPARK_HOME, Path;
-2) В 1 командной строке запустить: spark-class org.apache.spark.deploy.master.Master;
-3) Во 2 командной строке из папки spark-3.5.6-bin-hadoop3 запустить рабочий узел: spark-class org.apache.spark.deploy.worker.Worker spark://192.168.56.1:7077;
-4) В 3 командной строке из папки spark-3.5.6-bin-hadoop3 запустить приложение: spark-shell --master spark://192.168.56.1:7077;
+2) В 1 командной строке запустить: spark-class org.apache.spark.deploy.master.Master; Открыть в браузере: http://localhost:8080/ или http://localhost:4040/ , скопировать от туда адрес Spark Master at, например, spark://192.168.0.100:7077;
+3) Во 2 командной строке из папки spark-3.5.6-bin-hadoop3 запустить рабочий узел (в конце вставить полученный адрес Spark Master at): spark-class org.apache.spark.deploy.worker.Worker spark://192.168.0.100:7077;
+4) В 3 командной строке из папки spark-3.5.6-bin-hadoop3 запустить приложение (в конце вставить полученный адрес Spark Master at): spark-shell --master spark://192.168.0.100:7077;
 5) Проверить, открыв в браузере: http://localhost:8080/ ;
 6) В ntelliJ IDEA установить плагин Scala, настроить settings.xml (если нужно);
 7) В файле src\main\scala\core\LogAnalyzer.scala настроить пути для временных файлов;
